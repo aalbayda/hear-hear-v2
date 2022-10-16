@@ -10,7 +10,7 @@ import time
 import pymongo
 from pymongo import MongoClient
 
-import dbl
+#import db
 
 client = commands.AutoShardedBot(shard_count=2, command_prefix = '-', intents = intents)
 
