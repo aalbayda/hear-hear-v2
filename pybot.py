@@ -5,7 +5,7 @@ from discord.utils import get
 from config import TOKEN
 
 import asyncio
-import randomco
+import random
 import time
 import pymongo
 from pymongo import MongoClient
