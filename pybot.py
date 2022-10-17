@@ -4,6 +4,8 @@ from discord.ext import commands
 from discord.utils import get
 from config import TOKEN
 
+import html
+import requests
 import re
 import asyncio
 import random
@@ -41,6 +43,13 @@ async def on_ready():
     # while True:
     #     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=act))
     #     await asyncio.sleep(1800)
+
+@client.tree.command(name="getmotion",description="Gets a random motion from hellomotions.com.")
+async def getmotion(interaction: discord.Interaction):
+    req = requests.get("https://hellomotions.com/random-motion")
+    body = req.text.split("<b>")
+    motion = html.unescape((body[1].split("</b"))[0])
+    await interaction.response.send_message(f"{motion}")
 
 @client.tree.command(name="coinflip",description="Chooses between heads and tails, useful for vetoes")
 async def coinflip(interaction: discord.Interaction):
