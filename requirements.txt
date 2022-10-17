@@ -2,3 +2,4 @@ discord.py
 pymongo
 dnspython
 dblpy
+requests
