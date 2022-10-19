@@ -44,7 +44,7 @@ async def on_ready():
 
 @client.tree.command(name="ping",description="Checks response time between client and Hear Hear! bot.")
 async def ping(interaction: discord.Interaction):
-    await interaction.response.send_message(f"Pinged in {round(client.latency)*1000} ms.")
+    await interaction.response.send_message(f"Pinged in {round(client.latency*1000)} ms.")
 
 @client.tree.command(name="commands",description="Lists commands for the Hear Hear bot.")
 async def about(interaction: discord.Interaction):
