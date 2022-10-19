@@ -49,7 +49,7 @@ async def ping(interaction: discord.Interaction):
 
 @client.tree.about(name="about",description="About the Hear! Hear! bot.")
 async def about(interaction: discord.Interaction):
-    await interaction.response.send_message()
+    await interaction.response.send_message("WIP")
 
 @client.tree.command(name="commands",description="Lists commands for the Hear Hear bot.")
 async def commands(interaction: discord.Interaction):
