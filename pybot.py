@@ -37,6 +37,10 @@ async def on_ready():
         print(f"Synced {len(synced)} commands")
     except Exception as e:
         print(e)
+    while True:
+        act = f'debates in {len(client.guilds)} servers'
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=act))
+        await asyncio.sleep(1800)
 
 @client.tree.command(name="ping",description="Checks response time between client and Hear Hear! bot.")
 async def ping(interaction: discord.Interaction):
