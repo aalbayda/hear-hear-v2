@@ -38,30 +38,35 @@ async def on_ready():
     except Exception as e:
         print(e)
 
-    # while True:
-    #     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=act))
-    #     await asyncio.sleep(1800)
+@client.tree.command(name="ping",description="Checks response time between client and Hear Hear! bot.")
+async def ping(interaction: discord.Interaction):
+    await interaction.response.send_message(f"Pinged in {round(client.latency)*1000} ms.")
 
 @client.tree.command(name="commands",description="Lists commands for the Hear Hear bot.")
 async def about(interaction: discord.Interaction):
     embed = discord.Embed()
-    embed.title = "Hear! Hear!: A Debate Timer Bot"
+    embed.title = "List of Commands for the Hear! Hear! Bot"
     embed.set_image(url="https://i.imgur.com/7Lw4CRt.gif")
     embed.description = f"""
-**List of Commands**
+`/ping`
+Checks response time between client and Hear Hear! bot.
 
-`/time`
-Times a speech when given the format `XmYs`, e.g. `8m`, `7m15s`, or `30s`. Uses buttons to start, pause, and stop.
+`/commands`
+Displays list of commands.
 
 `/coinflip`
 Randomly chooses between heads and tails. Useful for vetoes.
 
 `/getmotion`
-Generates a random motion from the hellomotions motion bank.
+Displays a random motion from the hellomotions motion bank.
+
+`/time`
+Times a speech with format *XmYs*, e.g. *7m*, *5m30s*, *30s*.
 """
+    embed.set_footer(text="Developed by Tasdid Tahsin and Bob Albayda.",icon_url="https://i.imgur.com/RaQy5so.png")
     await interaction.response.send_message(embed=embed)
 
-@client.tree.command(name="getmotion",description="Gets a random motion from hellomotions.com.")
+@client.tree.command(name="getmotion",description="Displays a random motion from the hellomotions motion bank.")
 async def getmotion(interaction: discord.Interaction):
     req = requests.get("https://hellomotions.com/random-motion")
     body = req.text.split("<b>")
