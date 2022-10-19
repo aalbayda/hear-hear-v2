@@ -3,8 +3,6 @@ from discord import app_commands
 from discord.ext import commands
 from discord.utils import get
 #from config import TOKEN
-
-from boto.s3.connection import S3Connection
 import os
 import html
 import requests
@@ -177,6 +175,6 @@ async def timer(interaction: discord.Interaction, time: str):
 
     await interaction.response.send_message(f"⏳ **Timer**   `{mins} : {secs}`", view=Timer(mins,secs))
 
-s3 = S3Connection(os.environ['TOKEN'])
+s3 = os.environ['TOKEN']
 print(s3)
 #client.run()
