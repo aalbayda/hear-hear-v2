@@ -42,6 +42,25 @@ async def on_ready():
     #     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=act))
     #     await asyncio.sleep(1800)
 
+@client.tree.command(name="commands",description="Lists commands for the Hear Hear bot.")
+async def about(interaction: discord.Interaction):
+    embed = discord.Embed()
+    embed.title = "Hear! Hear!: A Debate Timer Bot"
+    embed.set_image(url="https://i.imgur.com/7Lw4CRt.gif")
+    embed.description = f"""
+**List of Commands**
+
+`/time`
+Times a speech when given the format `XmYs`, e.g. `8m`, `7m15s`, or `30s`. Uses buttons to start, pause, and stop.
+
+`/coinflip`
+Randomly chooses between heads and tails. Useful for vetoes.
+
+`/getmotion`
+Generates a random motion from the hellomotions motion bank.
+"""
+    await interaction.response.send_message(embed=embed)
+
 @client.tree.command(name="getmotion",description="Gets a random motion from hellomotions.com.")
 async def getmotion(interaction: discord.Interaction):
     req = requests.get("https://hellomotions.com/random-motion")
