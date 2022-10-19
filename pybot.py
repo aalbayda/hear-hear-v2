@@ -2,9 +2,9 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from discord.utils import get
-from config import TOKEN
+#from config import TOKEN
 
-import boto
+from boto.s3.connection import S3Connection
 import html
 import requests
 import re
@@ -47,7 +47,9 @@ async def on_ready():
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message(f"Pinged in {round(client.latency*1000)} ms.")
 
-#@client.tree.about(name="about",description="About the Hear! Hear! bot.")
+@client.tree.about(name="about",description="About the Hear! Hear! bot.")
+async def about(interaction: discord.Interaction):
+    await interaction.response.send_message()
 
 @client.tree.command(name="commands",description="Lists commands for the Hear Hear bot.")
 async def commands(interaction: discord.Interaction):
@@ -174,4 +176,4 @@ async def timer(interaction: discord.Interaction, time: str):
 
     await interaction.response.send_message(f"⏳ **Timer**   `{mins} : {secs}`", view=Timer(mins,secs))
 
-client.run(TOKEN)
+client.run(S3Connection(os.environ['TOKEN']))
