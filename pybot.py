@@ -47,8 +47,10 @@ async def on_ready():
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message(f"Pinged in {round(client.latency*1000)} ms.")
 
+#@client.tree.about(name="about",description="About the Hear! Hear! bot.")
+
 @client.tree.command(name="commands",description="Lists commands for the Hear Hear bot.")
-async def about(interaction: discord.Interaction):
+async def commands(interaction: discord.Interaction):
     embed = discord.Embed()
     embed.title = "List of Commands for the Hear! Hear! Bot"
     embed.set_image(url="https://i.imgur.com/7Lw4CRt.gif")
@@ -68,7 +70,7 @@ Displays a random motion from the hellomotions motion bank.
 `/time`
 Times a speech with format *XmYs*, e.g. *7m*, *5m30s*, *30s*.
 """
-    #embed.set_footer(text="Developed by Tasdid Tahsin and Bob Albayda.",icon_url="https://i.imgur.com/RaQy5so.png")
+    embed.set_footer(text="Message <@704206757681037362> or <@696777012110688296> for technical help.",icon_url="https://i.imgur.com/RaQy5so.png")
     await interaction.response.send_message(embed=embed)
 
 @client.tree.command(name="getmotion",description="Displays a random motion from the hellomotions motion bank.")
