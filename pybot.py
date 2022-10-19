@@ -10,14 +10,14 @@ import re
 import asyncio
 import random
 import time
-import pymongo
-from pymongo import MongoClient
+# import pymongo
+# from pymongo import MongoClient
 
 #import db
 
-client = commands.Bot(command_prefix=".", intents=discord.Intents.all())
+#client = commands.Bot(command_prefix=".", intents=discord.Intents.all())
 
-#client = commands.AutoShardedBot(shard_count=2, command_prefix = '-', intents = intents)
+client = commands.AutoShardedBot(shards=2, command_prefix = '-', intents=discord.Intents.default())
 
 #token = 'discordBotToken' 
 #mongoClusterKey0 = 'MongoDB Cluster Key'
@@ -31,9 +31,7 @@ client = commands.Bot(command_prefix=".", intents=discord.Intents.all())
 @client.event
 async def on_ready():
     print('Bot Activated!\n')
-    print(f'Logged in as {client.user.name}\n')
     print('------------------------------\n')
-    act = f'debates in {len(client.guilds)} servers [.help]'
     try:
         synced = await client.tree.sync()
         print(f"Synced {len(synced)} commands")
