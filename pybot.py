@@ -178,5 +178,5 @@ async def timer(interaction: discord.Interaction, time: str):
     await interaction.response.send_message(f"⏳ **Timer**   `{mins} : {secs}`", view=Timer(mins,secs))
 
 s3 = S3Connection(os.environ['TOKEN'])
-print(S3)
+print(s3)
 #client.run()
