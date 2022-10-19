@@ -175,4 +175,4 @@ async def timer(interaction: discord.Interaction, time: str):
 
     await interaction.response.send_message(f"⏳ **Timer**   `{mins} : {secs}`", view=Timer(mins,secs))
  
-print(os.environ['TOKEN'])
+client.run(os.environ['TOKEN'])
