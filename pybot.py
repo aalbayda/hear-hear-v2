@@ -4,6 +4,7 @@ from discord.ext import commands
 from discord.utils import get
 from config import TOKEN
 
+import boto
 import html
 import requests
 import re
@@ -67,7 +68,7 @@ Displays a random motion from the hellomotions motion bank.
 `/time`
 Times a speech with format *XmYs*, e.g. *7m*, *5m30s*, *30s*.
 """
-    embed.set_footer(text="Developed by Tasdid Tahsin and Bob Albayda.",icon_url="https://i.imgur.com/RaQy5so.png")
+    #embed.set_footer(text="Developed by Tasdid Tahsin and Bob Albayda.",icon_url="https://i.imgur.com/RaQy5so.png")
     await interaction.response.send_message(embed=embed)
 
 @client.tree.command(name="getmotion",description="Displays a random motion from the hellomotions motion bank.")
