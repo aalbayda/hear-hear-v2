@@ -47,9 +47,9 @@ async def on_ready():
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message(f"Pinged in {round(client.latency*1000)} ms.")
 
-@client.tree.about(name="about",description="About the Hear! Hear! bot.")
-async def about(interaction: discord.Interaction):
-    await interaction.response.send_message("WIP")
+# @client.tree.command(name="about",description="About the Hear! Hear! bot.")
+# async def about(interaction: discord.Interaction):
+#     await interaction.response.send_message("WIP")
 
 @client.tree.command(name="commands",description="Lists commands for the Hear Hear bot.")
 async def commands(interaction: discord.Interaction):
