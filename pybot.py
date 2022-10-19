@@ -5,6 +5,7 @@ from discord.utils import get
 #from config import TOKEN
 
 from boto.s3.connection import S3Connection
+import os
 import html
 import requests
 import re
