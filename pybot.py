@@ -10,23 +10,8 @@ import re
 import asyncio
 import random
 import time
-# import pymongo
-# from pymongo import MongoClient
-
-#import db
-
-#client = commands.Bot(command_prefix=".", intents=discord.Intents.all())
 
 client = commands.AutoShardedBot(shards=2, command_prefix = '-', intents=discord.Intents.default())
-
-#token = 'discordBotToken' 
-#mongoClusterKey0 = 'MongoDB Cluster Key'
-
-#cluster0 = MongoClient(mongoClusterKey0)
-#db = cluster0['hearhear-bot']
-
-#TopGG_Token = 'TopGG Token'
-#dbl.DBLClient(client, TopGG_Token, autopost=True) # Autopost will post your guild count every 30 minutes
 
 @client.event
 async def on_ready():
@@ -45,10 +30,6 @@ async def on_ready():
 @client.tree.command(name="ping",description="Checks response time between client and Hear Hear! bot.")
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message(f"Pinged in {round(client.latency*1000)} ms.")
-
-# @client.tree.command(name="about",description="About the Hear! Hear! bot.")
-# async def about(interaction: discord.Interaction):
-#     await interaction.response.send_message("WIP")
 
 @client.tree.command(name="commands",description="Lists commands for the Hear Hear bot.")
 async def commands(interaction: discord.Interaction):
