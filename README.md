@@ -1,6 +1,6 @@
 # hear-hear-v2
 
-Online competitive debate Discord bot; revamped to accommodate slash commands. There are plans to expand its features. Feel free to reach out for suggestions.
+Online competitive debate Discord bot; revamped to accommodate slash commands. Currently serves over 5000 servers and countless debaters. There are plans to expand its features. Feel free to reach out for suggestions.
 
 # Commands
 
@@ -8,7 +8,7 @@ Online competitive debate Discord bot; revamped to accommodate slash commands. T
 | :---: |:---:| :---:|
 | `/commands`|None|Displays all commands|
 | `/ping`|None|Measures response time between client and the Hear Hear bot|
-| `/getmotion`|None for now|Displays a random debate motion|
+| `/getmotion`|None for now|Displays a random motion from the hellomotions motion bank|
 | `/coinflip`|None|Randomly displays either heads or tails|
 | `/timer`|Time to count down from with format `XmYs`, e.g. `7m15s` or `8m` or `30s`|Creates an on-screen timer|
 
