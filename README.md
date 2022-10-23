@@ -1,4 +1,4 @@
-# hear-hear-v2
+# Hear Hear bot v2
 
 Online competitive debate Discord bot; revamped to accommodate slash commands. Currently serves over 5000 servers and countless debaters. There are plans to expand its features. Feel free to reach out for suggestions.
 
